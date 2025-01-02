@@ -4,6 +4,9 @@ services:
     container_name: macos
     environment:
       VERSION: "13"
+      RAM_SIZE: "12G"
+      CPU_CORES: "8"
+      DISK_SIZE: "30G"
     devices:
       - /dev/kvm
       - /dev/net/tun
@@ -14,3 +17,5 @@ services:
       - 5900:5900/tcp
       - 5900:5900/udp
     stop_grace_period: 2m
+    volumes:
+      - ./storage:/storage
